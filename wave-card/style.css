@@ -1,0 +1,126 @@
+@import url(//at.alicdn.com/t/c/font_3801720_rheieqp77vg.css);
+@import url(//at.alicdn.com/t/c/font_3801720_fohlygjgy2q.css);
+@import url(//at.alicdn.com/t/c/font_3801720_rheieqp77vg.css);
+@font-face {
+    font-family: harmony;
+    src: url(/form-wave/HarmonyOS_Sans_Bold_Italic.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container h1 {
+    font-family: harmony;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn {
+    font-family: harmony;
+}
+
+body {
+    background-color: #2C9678;
+    color: #fff;
+    font-family: harmony, sans-serif;
+    display: flex;
+    /* flex-direction 属性规定灵活项目的方向。 */
+    /* column 灵活的项目将垂直显示，正如一个列一样。 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 提示：使用 align-content 属性对齐交叉轴上的各项（垂直）。 */
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(96, 96, 96, 0.4);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.container a {
+    text-decoration: none;
+    color: #A4CAB6;
+}
+
+.txts {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: #A4CAB6;
+    padding: 15px;
+    font-weight: harmony;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    /* 鼠标点击button，按钮缩小倍数 */
+    transform: scale(0.95);
+}
+
+.txt {
+    margin: 30px;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.form-control input {
+    /* input设置为父背景色 */
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+
+/* valid 选择器在表单元素的值需要根据指定条件验证时设置指定样式。 */
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: #A4CAB6;
+}
+
+.form-control label {
+    position: absolute;
+    top: 29px;
+    left: 25px;
+    pointer-events: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 12px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    color: #A4CAB6;
+    transform: translateY(-30px);
+}
