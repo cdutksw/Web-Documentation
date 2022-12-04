@@ -1,0 +1,147 @@
+@import url('//at.alicdn.com/t/c/font_3801720_uwlht0hmnd.css');
+@font-face {
+    font-family: baloo2;
+    src: url('/time-clock/Baloo2-ExtraBold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000;
+    --second-color: #fff;
+}
+
+html {
+    /* 平滑过渡0.5秒，由慢到快 */
+    transition: all 0.5s ease-in;
+}
+
+html.dark {
+    --primary-color: #fff;
+    --second-color: #333;
+    background-color: #111;
+    color: var(--primary-color);
+}
+
+body {
+    font-family: baloo2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.toggle {
+    font-family: baloo2;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 4.5px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 100px;
+    color: var(--second-color);
+    font-size: 20px;
+}
+
+.toggle:focus {
+    outline: none;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content：项目在主轴上的对齐方式；space-between：两端对齐，项目之间的间隔都相等 */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    /* transform-origin属性设置元素旋转起始位置 */
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: #ec3722;
+}
+
+.center-point {
+    background-color: #ec3722;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.center-point::after {
+    /* content: "" 的引号中即是添加的内容 */
+    content: '';
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.time {
+    font-size: 60px;
+    font-family: baloo2;
+}
+
+.date {
+    color: #aaa;
+    font-size: 14px;
+    /* letter-spacing属性用来增加或减少字符或汉字之间的距离,默认值为0。 */
+    letter-spacing: 0.3px;
+    /* text-transform: uppercase, 使内容转化成大写 */
+    text-transform: uppercase;
+    font-family: baloo2;
+}
+
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--second-color);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+}
